@@ -10,6 +10,8 @@ import Foundation
 /*
  An optimization technique that stores expensive calculated results and returns them when they are called for.
  Basically, caching expensive results
+ 
+ MARK: What to know -> Fibonacci [Fn = Fn-1 + Fn-2] (Recursive, grows exponetially, O(2n)). Memoization is for optimization
  */
 
 //MARK: Fibonacci without memoization:
@@ -27,6 +29,9 @@ func fibNaive(_ n: Int) -> Int {
 }
 
 print("Unoptimized fibonacci: \(fibNaive(30))")
+
+
+//MARK: With memoization (results saved to dictionary)
 
 var memo = [Int: Int]()
 
@@ -47,7 +52,11 @@ func fib(_ n: Int) -> Int {
     return memo[n]!
 }
 
-print(fibNaive(30))
+print("")
+print("Optimized Fibonacci \(fibNaive(30))")
+
+print("")
+
 
 
 
